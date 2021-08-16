@@ -1,0 +1,20 @@
+<% require 'open-uri'%>
+
+<p>
+ <% def dictionary(attempt)%>
+      <% url = "https://wagon-dictionary.herokuapp.com/#{attempt}" %>
+      <% dictionary_api = URI.open(url).read %>
+      <% JSON.parse(dictionary_api) %>
+    <% end %>
+
+
+    <% if dictionary(@attempt)["found"] == false %>
+    Sorry but <strong><%=@attempt%></strong> does not seem to be a valid english word...
+    <% elsif dictionary(@attempt)["found"] == true && @attempt.upcase.chars.each {|letter| letter.include?(@attempt)} %>
+    <strong>Congratulations!</strong> <%=@attempt%> is a valid English word!
+    <% else %>
+    Sorry but <%=@attempt%> can not be built out of <%=params[:letters]%>
+    <% end %>
+</p>
+
+<%= link_to "Play Again", new_path %>

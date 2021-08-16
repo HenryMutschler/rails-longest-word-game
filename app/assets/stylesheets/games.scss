@@ -1,0 +1,35 @@
+.letter{
+    border: 1px solid lightgrey;
+    border-radius: 4px;
+    background-color: blue;
+    color: white;
+    padding: 16px;
+    margin: 8px;
+    font-size: 16px;
+    font-weight: bold;
+}
+.grid{
+    padding: 10px;
+    margin: 24px;
+}
+
+.answer{
+    padding: 10px;
+    margin: 24px;   
+}
+
+.form{
+    width: 50%;
+    padding: 12px 20px;
+    margin: 8px 0;
+    box-sizing: border-box;
+}
+
+.button{
+    background-color:blue;
+    border-radius: 8px;
+    padding: 12px 20px;
+    margin: 8px 0;
+    color: white;
+    font-weight: bold;
+}
